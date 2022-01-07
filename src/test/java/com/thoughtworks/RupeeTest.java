@@ -49,4 +49,14 @@ class RupeeTest {
 
         assertThat(tenRupee, is(not(equalTo(null))));
     }
+
+    @Test
+    void shouldNotEquateWhenTenRupeeToObjectOfDifferentType() {
+        int tenRupeeNote = 10;
+
+        Rupee tenRupee = new Rupee(tenRupeeNote);
+        Object object = new Object();
+
+        assertThat(tenRupee, is(not(equalTo(object))));
+    }
 }
