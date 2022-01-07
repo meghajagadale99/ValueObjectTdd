@@ -61,7 +61,7 @@ class RupeeTest {
     }
 
     @Test
-    void shouldEquateTenRupeeToSumOfSevenRupeeAndThreeRupee() {
+    void shouldEquateWhenTenRupeeToSumOfSevenRupeeAndThreeRupee() {
         int tenRupeeNote = 10;
 
         Rupee tenRupee = new Rupee(tenRupeeNote);
@@ -72,5 +72,18 @@ class RupeeTest {
 
         assertThat(result, is(equalTo(tenRupee)));
 
+    }
+
+    @Test
+    void shouldNotEquateWhenTenRupeeToSumOfFiveRupeeAndTwoRupee() {
+        int tenRupeeNote = 10;
+
+        Rupee tenRupee = new Rupee(tenRupeeNote);
+        Rupee fiveRupee = new Rupee(5);
+        Rupee twoRupee = new Rupee(2);
+
+        Rupee result = fiveRupee.sum(twoRupee);
+
+        assertThat(result, is(not(equalTo(tenRupee))));
     }
 }
