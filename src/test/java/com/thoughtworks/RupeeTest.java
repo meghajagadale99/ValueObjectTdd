@@ -40,4 +40,13 @@ class RupeeTest {
 
         assertThat(tenRupee, is(not(equalTo(fiveRupee))));
     }
+
+    @Test
+    void shouldNotEquateWhenTenRupeeToNull() {
+        int tenRupeeNote = 10;
+
+        Rupee tenRupee = new Rupee(tenRupeeNote);
+
+        assertThat(tenRupee, is(not(equalTo(null))));
+    }
 }
