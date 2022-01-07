@@ -12,7 +12,7 @@ class RupeeTest {
 
     @Test
     void shouldEquateWhenTenRupeeToTenRupeeIsGiven() {
-        int tenRupeeNote=10;
+        int tenRupeeNote = 10;
 
         Rupee tenRupee = new Rupee(tenRupeeNote);
         Rupee anotherTenRupee = new Rupee(tenRupeeNote);
@@ -33,10 +33,10 @@ class RupeeTest {
     @Test
     void shouldNotEquateWhenTenRupeeToFiveRupee() {
         int tenRupeeNote = 10;
-        int fiveRupeeNote = 5;
+        int fiveRupeee = 5;
 
         Rupee tenRupee = new Rupee(tenRupeeNote);
-        Rupee fiveRupee = new Rupee(fiveRupeeNote);
+        Rupee fiveRupee = new Rupee(fiveRupeee);
 
         assertThat(tenRupee, is(not(equalTo(fiveRupee))));
     }
@@ -58,5 +58,19 @@ class RupeeTest {
         Object object = new Object();
 
         assertThat(tenRupee, is(not(equalTo(object))));
+    }
+
+    @Test
+    void shouldEquateTenRupeeToSumOfSevenRupeeAndThreeRupee() {
+        int tenRupeeNote = 10;
+
+        Rupee tenRupee = new Rupee(tenRupeeNote);
+        Rupee sevenRupee = new Rupee(7);
+        Rupee threeRupee = new Rupee(3);
+
+        Rupee result = sevenRupee.sum(threeRupee);
+
+        assertThat(result, is(equalTo(tenRupee)));
+
     }
 }

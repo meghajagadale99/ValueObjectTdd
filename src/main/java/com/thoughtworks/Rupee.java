@@ -25,4 +25,10 @@ class Rupee {
     int hashCode() {
         return Objects.hash(value);
     }
+
+    public
+    Rupee sum(Rupee rupee) {
+        int sum = this.value+ rupee.value;
+        return new Rupee(sum);
+    }
 }
